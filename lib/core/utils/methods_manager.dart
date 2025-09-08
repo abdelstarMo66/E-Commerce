@@ -37,6 +37,13 @@ class MethodsManager {
     return brightness;
   }
 
+  static DeviceTypeEnum getDeviceType(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+    if (width < 600) return DeviceTypeEnum.mobile;
+    if (width < 1100) return DeviceTypeEnum.tablet;
+    return DeviceTypeEnum.website;
+  }
+
   static String getToken() {
     String? storeToken = SharedPreferencesManager.getData(
       key: PrefsManager.token,

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
-enum DeviceType { mobile, tablet, website }
-// enum DeviceType { mobile, tablet }
+import 'package:shopping/core/utils/enums_manager.dart';
+import 'package:shopping/core/utils/methods_manager.dart';
 
 class AdaptiveLayout extends StatelessWidget {
   final Widget mobile;
@@ -15,23 +14,14 @@ class AdaptiveLayout extends StatelessWidget {
     required this.website,
   });
 
-  static DeviceType getDeviceType(BuildContext context) {
-    final width = MediaQuery.of(context).size.width;
-    if (width < 600) return DeviceType.mobile;
-    if (width < 1100) return DeviceType.tablet;
-    return DeviceType.website;
-    // if (width < 600) return DeviceType.mobile;
-    // return DeviceType.tablet;
-  }
-
   @override
   Widget build(BuildContext context) {
-    switch (getDeviceType(context)) {
-      case DeviceType.mobile:
+    switch (MethodsManager.getDeviceType(context)) {
+      case DeviceTypeEnum.mobile:
         return mobile;
-      case DeviceType.tablet:
+      case DeviceTypeEnum.tablet:
         return tablet;
-      case DeviceType.website:
+      case DeviceTypeEnum.website:
         return website;
     }
   }

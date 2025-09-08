@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:shopping/core/routing/routes.dart';
-import 'package:shopping/features/auth/ui/login_screen.dart';
-import 'package:shopping/features/auth/ui/views/mobile/complete_profile.dart';
-import 'package:shopping/features/auth/ui/views/mobile/forgot_password.dart';
-import 'package:shopping/features/auth/ui/views/mobile/register_screen.dart';
-import 'package:shopping/features/auth/ui/views/mobile/reset_password.dart';
-import 'package:shopping/features/auth/ui/views/mobile/verification.dart';
-import 'package:shopping/features/auth/ui/views/mobile/verify_registration.dart';
+import 'package:shopping/features/auth/ui/forgot_password/forgot_password_screen.dart';
+import 'package:shopping/features/auth/ui/forgot_password/reset_password_screen.dart';
+import 'package:shopping/features/auth/ui/forgot_password/verification_screen.dart';
+import 'package:shopping/features/auth/ui/login/login_screen.dart';
+import 'package:shopping/features/auth/ui/register/complete_profile_screen.dart';
+import 'package:shopping/features/auth/ui/register/register_screen.dart';
+import 'package:shopping/features/auth/ui/register/verify_registration_screen.dart';
 import 'package:shopping/features/layout/layout.dart';
 import 'package:shopping/features/splash/splash_screen.dart';
 
@@ -25,15 +25,15 @@ class AppRouter {
       case Routes.register:
         return AnimationRoute(page: const RegisterScreen());
       case Routes.verifyRegistration:
-        return AnimationRoute(page: const VerifyRegistration());
+        return AnimationRoute(page: const VerifyRegistrationScreen());
       case Routes.completeProfile:
-        return AnimationRoute(page: const CompleteProfile());
+        return AnimationRoute(page: const CompleteProfileScreen());
       case Routes.forgotPassword:
-        return AnimationRoute(page: const ForgotPassword());
+        return AnimationRoute(page: const ForgotPasswordScreen());
       case Routes.verification:
-        return AnimationRoute(page: const Verification());
+        return AnimationRoute(page: const VerificationScreen());
       case Routes.resetPassword:
-        return AnimationRoute(page: const ResetPassword());
+        return AnimationRoute(page: const ResetPasswordScreen());
 
       // Home
       case Routes.layout:

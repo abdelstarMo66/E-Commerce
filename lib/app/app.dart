@@ -5,6 +5,7 @@ import 'package:shopping/core/helpers/snack_bar_service.dart';
 import 'package:shopping/core/routing/app_router.dart';
 import 'package:shopping/core/routing/routes.dart';
 import 'package:shopping/core/theme/theme_manager.dart';
+import 'package:shopping/core/utils/enums_manager.dart';
 import 'package:shopping/core/utils/methods_manager.dart';
 
 class Shopping extends StatelessWidget {
@@ -35,7 +36,11 @@ class Shopping extends StatelessWidget {
       // supportedLocales: context.supportedLocales,
       // localizationsDelegates: context.localizationDelegates,
       // locale: context.locale,
-      initialRoute: Routes.login,
+      initialRoute: Routes.splash,
+      // initialRoute:
+      //     MethodsManager.getDeviceType(context) == DeviceTypeEnum.website
+      //         ? Routes.login
+      //         : Routes.splash,
       onGenerateRoute: appRouter.generateRoute,
     );
   }

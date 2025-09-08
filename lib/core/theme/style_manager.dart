@@ -19,41 +19,33 @@ TextStyle _getTextStyle({
 }
 
 class TextStyleManager {
-  static TextStyle regular({
-    double fontSize = FontSize.s14,
-    required Color color,
-  }) => _getTextStyle(
-    fontSize: fontSize,
-    fontWeight: FontWeightManager.regular,
-    color: color,
-  );
+  static TextStyle regular({double? fontSize, required Color color}) =>
+      _getTextStyle(
+        fontSize: fontSize ?? FontSize.s14,
+        fontWeight: FontWeightManager.regular,
+        color: color,
+      );
 
-  static TextStyle medium({
-    double fontSize = FontSize.s16,
-    required Color color,
-  }) => _getTextStyle(
-    fontSize: fontSize,
-    fontWeight: FontWeightManager.medium,
-    color: color,
-  );
+  static TextStyle medium({double? fontSize, required Color color}) =>
+      _getTextStyle(
+        fontSize: fontSize ?? FontSize.s16,
+        fontWeight: FontWeightManager.medium,
+        color: color,
+      );
 
-  static TextStyle semiBold({
-    double fontSize = FontSize.s18,
-    required Color color,
-  }) => _getTextStyle(
-    fontSize: fontSize,
-    fontWeight: FontWeightManager.semiBold,
-    color: color,
-  );
+  static TextStyle semiBold({double? fontSize, required Color color}) =>
+      _getTextStyle(
+        fontSize: fontSize ?? FontSize.s18,
+        fontWeight: FontWeightManager.semiBold,
+        color: color,
+      );
 
-  static TextStyle bold({
-    double fontSize = FontSize.s24,
-    required Color color,
-  }) => _getTextStyle(
-    fontSize: fontSize,
-    fontWeight: FontWeightManager.bold,
-    color: color,
-  );
+  static TextStyle bold({double? fontSize, required Color color}) =>
+      _getTextStyle(
+        fontSize: fontSize ?? FontSize.s24,
+        fontWeight: FontWeightManager.bold,
+        color: color,
+      );
 
   static TextStyle custom({
     required double fontSize,
@@ -66,7 +58,7 @@ class CustomTextStyleManager {
   static Brightness brightness = MethodsManager.getBrightness();
 
   static TextStyle headerSplashScreen = GoogleFonts.permanentMarker(
-    fontSize: 38.0,
+    fontSize: FontSize.s38,
     fontWeight: FontWeightManager.bold,
     color:
         brightness == Brightness.light
@@ -75,11 +67,20 @@ class CustomTextStyleManager {
   );
 
   static TextStyle bodySplashScreen = GoogleFonts.permanentMarker(
-    fontSize: 22.0,
+    fontSize: FontSize.s22,
     fontWeight: FontWeightManager.medium,
     color:
         brightness == Brightness.light
             ? ColorManager.lPrimaryColor
             : ColorManager.dThirdColor,
+  );
+
+  static TextStyle textStylePinCode = _getTextStyle(
+    fontSize: FontSize.s24,
+    fontWeight: FontWeightManager.medium,
+    color:
+        brightness == Brightness.light
+            ? ColorManager.onyxColor
+            : ColorManager.offWhiteColor,
   );
 }

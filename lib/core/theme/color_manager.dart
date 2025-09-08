@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopping/core/utils/methods_manager.dart';
 
 class ColorManager {
   // No Color
@@ -44,4 +45,18 @@ class ColorManager {
   // Dark Colors
   static const Color dTextColor = Color(0xFFFAF9F6);
   static const Color dBGColor = Color(0xFF343434);
+}
+
+class CustomColorManager {
+  static Brightness brightness = MethodsManager.getBrightness();
+
+  static Color customPrimaryColor =
+      brightness == Brightness.light
+          ? ColorManager.lPrimaryColor
+          : ColorManager.dPrimaryColor;
+
+  static Color customBGColor =
+      brightness == Brightness.light
+          ? ColorManager.lBGColor
+          : ColorManager.dBGColor;
 }
